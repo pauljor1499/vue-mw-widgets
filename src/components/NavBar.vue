@@ -53,7 +53,7 @@ span {
 
   padding: 0px 5% 0px 5%;
   border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.05);
 }
 
 .logo {

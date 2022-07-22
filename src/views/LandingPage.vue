@@ -1,91 +1,50 @@
 <template>
   <div class="container">
     <NavBar />
-    <header></header>
     <body>
       <div class="content">
         <div class="content-video"></div>
-        <hr />
         <div class="title">
-          <h1>What do you want to learn today?</h1>
+          <h1>Why Choose MathWorld?</h1>
         </div>
         <div class="grid">
           <div class="col">
-            <h2>Course 1</h2>
-            <p style="margin: 10px 0px">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro quisquam est.
-            </p>
-            <n-button
-              color="#253759"
-              type="default"
-              size="medium"
-              id="enroll-c1"
-              style="margin: 10px 0px; color: #253759"
-              ghost
-              >Learn more</n-button
-            >
+            <div class="section1">
+              <div class="circle"></div>
+              <h2>Personalized Learning</h2>
+              <p>
+                Students practice at their own pace, first filling in gaps in
+                their understanding and then accelerating their learning.
+              </p>
+            </div>
           </div>
 
           <div class="col">
-            <h2>Course 2</h2>
-            <p style="margin: 10px 0px">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro quisquam est.
-            </p>
-            <n-button
-              color="#253759"
-              type="default"
-              size="medium"
-              id="enroll-c2"
-              style="margin: 10px 0px; color: #253759"
-              ghost
-              >Learn more</n-button
-            >
+            <div class="section2">
+              <div class="circle"></div>
+              <h2>Trusted Content</h2>
+              <p>
+                Created by experts, MathWorld’s library of trusted practice and
+                lessons covers math. Always free for learners and teachers.
+              </p>
+            </div>
           </div>
 
           <div class="col">
-            <h2>Course 3</h2>
-            <p style="margin: 10px 0px">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dlores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro quisquam est.
-            </p>
-            <n-button
-              color="#253759"
-              type="default"
-              size="medium"
-              id="enroll-c3"
-              style="margin: 10px 0px; color: #253759"
-              ghost
-              >Learn more</n-button
-            >
-          </div>
-
-          <div class="col">
-            <h2>Course 4</h2>
-            <p style="margin: 10px 0px">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-              aut fugit, sed quia consequuntur magni dolores eos qui ratione
-              voluptatem sequi nesciunt. Neque porro quisquam est.
-            </p>
-            <n-button
-              color="#253759"
-              type="default"
-              size="medium"
-              id="enroll-c4"
-              style="margin: 10px 0px; color: #253759"
-              ghost
-              >Learn more</n-button
-            >
+            <div class="section3">
+              <div class="circle"></div>
+              <h2>Tools to Empower Teachers</h2>
+              <p>
+                With MathWorld, teachers can identify gaps in their students’
+                understanding, tailor instruction, and meet the needs of every
+                student.
+              </p>
+            </div>
           </div>
         </div>
-        <hr />
         <div class="about">
           <div class="about-message">
-            <h1>Open your knowledge</h1>
+            <h1>Explore the World of Math</h1>
             <p>
               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
               aut fugit, sed quia consequuntur magni dolores eos qui ratione
@@ -97,10 +56,19 @@
             alt="knowledge"
           />
         </div>
-        <hr />
+        <div class="title">
+          <h1>Why Choose MathWorld?</h1>
+        </div>
         <div class="feedback">
-          <h1>What people say about us?</h1>
-          <n-carousel autoplay>
+          <v-carousel hide-delimiters>
+            <v-carousel-item
+              v-for="(item, i) in items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+          </v-carousel>
+
+          <!-- <n-carousel autoplay>
             <div>
               <img
                 class="carousel-img"
@@ -149,83 +117,154 @@
                 carry forward into the next school year.
               </p>
             </div>
-          </n-carousel>
+          </n-carousel> -->
         </div>
       </div>
     </body>
-    <footer></footer>
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
-  components: { NavBar },
+  components: { NavBar, Footer },
 };
 </script>
 
 <style scoped>
 .content {
-  padding: 50px;
+  padding: 70px;
 }
 
 .content .content-video {
-  width: 85%;
-  height: 550px;
+  height: 500px;
   margin: auto;
   margin-bottom: 50px;
-  background-color: gray;
+  border-radius: 25px;
+  background-color: #cbefff;
 }
 
 .content .title {
-  width: 85%;
   margin: auto;
   text-align: left;
-  margin-top: 50px;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .content .grid {
-  width: 85%;
   margin: auto;
+  margin-top: 100px;
   display: grid;
-  margin-bottom: 50px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+  margin-bottom: 100px;
 }
 
 .content .grid .col {
-  padding: 0px 0px 20px;
+  text-align: center;
   margin: auto;
+}
+
+.content .grid .col .section1 {
+  display: inline-block;
+  padding: 0px 50px 50px 50px;
+  border-radius: 25px;
+  background-color: #8cd6ff;
+}
+
+.content .grid .col .section1 .circle {
+  background: #0073b0;
+  border-radius: 50%;
+  border: 6px solid #8cd6ff;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 25px;
+}
+
+.content .grid .col .section1 h2 {
+  color: #0073b0;
+}
+
+.content .grid .col .section2 {
+  display: inline-block;
+  padding: 0px 50px 50px 50px;
+  border-radius: 25px;
+  background-color: #ffcdcd;
+}
+
+.content .grid .col .section2 .circle {
+  background: #ff244c;
+  border-radius: 50%;
+  border: 6px solid #ffcdcd;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 25px;
+}
+
+.content .grid .col .section2 h2 {
+  color: #ff244c;
+}
+
+.content .grid .col .section3 {
+  display: inline-block;
+  padding: 0px 50px 50px 50px;
+  border-radius: 25px;
+  background-color: #a6f48a;
+}
+
+.content .grid .col .section3 .circle {
+  background: #05893a;
+  border-radius: 50%;
+  border: 6px solid #a6f48a;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: -50px;
+  margin-bottom: 25px;
+}
+
+.content .grid .col .section3 h2 {
+  color: #05893a;
 }
 
 .content .grid .col h2 {
-  text-align: left;
+  margin-bottom: 20px;
 }
 
-.content .grid .col p {
-  padding-right: 40px;
-  text-align: left;
-}
-
-.content .grid .col .n-button {
+.content .grid .col button {
   float: left;
 }
 
-hr {
-  margin: auto;
-  width: 85%;
-}
-
 .about {
-  width: 85%;
   margin: auto;
-  padding: 50px;
+  border-radius: 25px;
+  background-color: #ffc38b;
+  padding: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .about-message {
-  text-align: left;
+  /* text-align: left; */
+}
+
+.about-message h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.about-message p {
+  color: white;
+  font-size: 1.2em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about img {
@@ -233,20 +272,23 @@ hr {
   height: 240px;
   object-fit: cover;
   margin: 0px 80px 0px;
+  box-shadow: 0px 5px 15px 0px #505050;
 }
 
 .feedback {
-  width: 85%;
+  border: 1px solid black;
   margin: auto;
   text-align: center;
-  padding: 50px;
 }
 
 .feedback h1 {
   margin: auto;
   width: 50%;
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+}
+
+.feedback h3 {
 }
 
 .feedback p {
