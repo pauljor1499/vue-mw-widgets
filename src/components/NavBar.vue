@@ -46,6 +46,9 @@ span {
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+
   font-family: "Lato", sans-serif;
   padding: 0px 5% 0px 5%;
   border-bottom: 1px solid #e0e0e0;
@@ -53,12 +56,14 @@ span {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+
   font-size: 2.2em;
-  /* background-color: rgb(252, 147, 9); */
 }
 
 .main-nav {
-  /* background-color: rgb(252, 147, 9); */
+  display: flex;
 }
 
 .main-nav li {
@@ -87,7 +92,7 @@ span {
   border-bottom: 2px solid #0091de;
 }
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   .header,
   .main-nav {
     display: flex;
@@ -103,5 +108,5 @@ span {
     flex-direction: row;
     justify-content: space-between;
   }
-}
+} */
 </style>
