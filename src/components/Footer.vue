@@ -73,16 +73,17 @@ footer .footer-body {
   /* column-gap: 100px; */
   padding: 50px;
   background-color: #003754;
-  border-bottom: 0.5px solid #0091de;
 }
 footer .footer-body .content {
   width: 100%;
   color: white;
   text-align: left;
-  /* border: 1px solid black; */
+  /* border: 1px solid white; */
 }
 footer .footer-body .content h3 {
+  width: 50%;
   margin-bottom: 20px;
+  border-bottom: 1px solid #0091de;
 }
 footer .footer-body .content .about {
   text-align: justify;
