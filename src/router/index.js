@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import LandingPage from "../views/LandingPage.vue";
-import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
 
 Vue.use(VueRouter);
 
@@ -12,9 +12,9 @@ const routes = [
     component: LandingPage,
   },
   {
-    path: "/navbar",
-    name: "NavBar",
-    component: NavBar,
+    path: "/footer",
+    name: "Footer",
+    component: Footer,
   },
 ];
 
