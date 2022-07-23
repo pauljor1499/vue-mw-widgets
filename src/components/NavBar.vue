@@ -1,8 +1,9 @@
 <template>
-  <header class="header">
+  <div class="header">
     <div class="logo">
       <router-link :to="'/navbar'">
-        <span>MathWorld</span>
+        <h1>Math</h1>
+        <span>World</span>
       </router-link>
     </div>
     <ul class="main-nav">
@@ -39,7 +40,7 @@
         </router-link>
       </div>
     </ul>
-  </header>
+  </div>
 </template>
 
 <style scoped>
@@ -59,28 +60,31 @@ span {
 .logo {
   display: flex;
   align-items: center;
-
-  font-size: 2.2em;
 }
 
-.main-nav {
+.logo h1 {
+  float: left;
+}
+
+.main-nav,
+.main-nav .buttons {
   display: flex;
+  align-items: center;
+}
+
+.logo span {
+  font-size: 2em;
 }
 
 .main-nav li {
   font-size: 1.2em;
   padding: 35px 20px 35px 20px;
-  text-align: center;
   border-bottom: 2px solid white;
-}
-
-.main-nav .buttons {
-  margin: auto;
 }
 
 .main-nav .v-btn {
   margin: 5px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .main-nav .v-btn span {
